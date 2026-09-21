@@ -775,3 +775,121 @@ func planificarViaje() {
 
     separador()
 }
+// ===============================================================
+// 11. INFORMACIÓN ADICIONAL DEL SISTEMA
+// ===============================================================
+
+// Muestra todas las estaciones disponibles organizadas
+// por línea de transporte.
+func mostrarEstacionesDisponibles() {
+
+    separador()
+    print("📋 ESTACIONES DISPONIBLES")
+    separador()
+
+    for linea in ["Línea 1", "Línea 2", "Metropolitano"] {
+
+        print("")
+        print("🚆 \(linea)")
+
+        if let estaciones = linesDictionary[linea] {
+
+            for estacion in estaciones {
+                print("   • \(estacion)")
+            }
+        }
+    }
+
+    separador()
+}
+
+// Muestra las estaciones relacionadas con sedes de los
+// Juegos Panamericanos.
+func mostrarSedesPanamericanas() {
+
+    separador()
+    print("🏆 SEDES PANAMERICANAS")
+    separador()
+
+    let estacionesConSede = allStations.filter {
+        $0.panamericanVenue != nil
+    }
+
+    if estacionesConSede.isEmpty {
+        print("No hay sedes Panamericanas registradas.")
+    } else {
+
+        for estacion in estacionesConSede {
+
+            print("")
+            print("🏟️ \(estacion.panamericanVenue ?? "")")
+            print("   Estación: \(estacion.name)")
+            print("   Línea: \(estacion.line)")
+        }
+    }
+
+    separador()
+}
+
+// Permite buscar una estación de manera interactiva y mostrar
+// inmediatamente todos sus detalles.
+func buscarEstacionInteractivo() {
+
+    separador()
+    print("🔎 BUSCAR ESTACIÓN")
+    separador()
+
+    print("Ingrese el nombre de la estación:")
+
+    guard let entrada = readLine() else {
+        print("❌ Entrada no válida.")
+        return
+    }
+
+    verDetalleEstacion(
+        nombreIngresado: entrada
+    )
+}
+
+// Muestra información general del proyecto y las cantidades
+// de estaciones registradas en el sistema.
+func mostrarInformacionSistema() {
+
+    separador()
+    print("ℹ️ INFORMACIÓN DEL SISTEMA")
+    separador()
+
+    print("Estudiante: Sheila Diaz Rojas")
+    print("Asignatura: Desarrollo Móvil Avanzado")
+    print("Sistema: Transporte Integrado de Lima")
+    print("")
+
+    print("🚆 Línea 1: \(linea1Stations.count) estaciones")
+    print("🚆 Línea 2: \(linea2Stations.count) estaciones")
+    print("🚌 Metropolitano: \(metropolitanoStations.count) estaciones")
+    print("📍 Total: \(allStations.count) estaciones")
+
+    print("")
+    print("⚠️ Los tiempos y tarifas utilizados en este proyecto")
+    print("son valores académicos de referencia.")
+
+    separador()
+}
+
+// Muestra el enlace de referencia del mapa del sistema de
+// transporte y proporciona una indicación para consultarlo.
+func mostrarMapa() {
+
+    separador()
+    print("🗺️ MAPA DEL SISTEMA")
+    separador()
+
+    print("Mapa de referencia:")
+    print("https://commons.wikimedia.org/wiki/File:Metro_de_Lima_-_Lineas_1_y_2.png")
+
+    print("")
+    print("Copie el enlace y ábralo en su navegador para")
+    print("consultar el mapa de referencia.")
+
+    separador()
+}
