@@ -294,3 +294,75 @@ let linea1Stations: [Station] = [
         panamericanVenue: "Polideportivo Villa El Salvador"
     )
 ]
+// ===============================================================
+// 3. ESTACIONES DE LA LÍNEA 2
+// ===============================================================
+
+// Contiene las estaciones de la Línea 2 consideradas para el
+// sistema integrado de transporte.
+let linea2Stations: [Station] = [
+
+    Station(
+        name: "Evitamiento",
+        line: "Línea 2",
+        index: 0,
+        hasElevator: true,
+        nearbyRoads: [
+            "Vía de Evitamiento",
+            "Av. Nicolás Ayllón"
+        ],
+        connections: [],
+        panamericanVenue: nil
+    ),
+
+    Station(
+        name: "Óvalo Santa Anita",
+        line: "Línea 2",
+        index: 1,
+        hasElevator: true,
+        nearbyRoads: [
+            "Carretera Central",
+            "Av. La Molina"
+        ],
+        connections: [],
+        panamericanVenue: nil
+    ),
+
+    Station(
+        name: "Colectora Industrial",
+        line: "Línea 2",
+        index: 2,
+        hasElevator: true,
+        nearbyRoads: [
+            "Carretera Central",
+            "Av. Colectora Industrial"
+        ],
+        connections: [],
+        panamericanVenue: nil
+    ),
+
+    Station(
+        name: "Hermilio Valdizán",
+        line: "Línea 2",
+        index: 3,
+        hasElevator: true,
+        nearbyRoads: [
+            "Carretera Central"
+        ],
+        connections: [],
+        panamericanVenue: nil
+    ),
+
+    Station(
+        name: "Mercado Santa Anita",
+        line: "Línea 2",
+        index: 4,
+        hasElevator: true,
+        nearbyRoads: [
+            "Carretera Central",
+            "Av. 22 de Julio"
+        ],
+        connections: [],
+        panamericanVenue: nil
+    )
+]
