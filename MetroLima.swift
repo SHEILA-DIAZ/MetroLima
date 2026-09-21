@@ -1,3 +1,4 @@
+
 // ===============================================================
 // SISTEMA INTEGRADO DE TRANSPORTE - LIMA
 // JUEGOS PANAMERICANOS
@@ -13,9 +14,6 @@ import Foundation
 // 1. MODELO DE DATOS
 // ===============================================================
 
-// Representa una estación del sistema de transporte.
-// Contiene información de línea, posición, accesibilidad,
-// conexiones y sedes Panamericanas relacionadas.
 struct Station: Hashable {
     let name: String
     let line: String
@@ -25,27 +23,15 @@ struct Station: Hashable {
     let connections: [String]
     let panamericanVenue: String?
 }
+
 // ===============================================================
-// 2. ESTACIONES DE LA LÍNEA 1
+// 2. LÍNEA 1
 // ===============================================================
 
-// Contiene las estaciones correspondientes a la Línea 1 del
-// Metro de Lima, incluyendo información de accesibilidad y
-// algunas sedes cercanas a los Juegos Panamericanos.
 let linea1Stations: [Station] = [
 
     Station(
         name: "Bayóvar",
-        line: "Línea 1",
-        index: 0,
-        hasElevator: true,
-        nearbyRoads: [],
-        connections: [],
-        panamericanVenue: nil
-    ),
-
-    Station(
-        name: "Santa Rosa",
         line: "Línea 1",
         index: 1,
         hasElevator: true,
@@ -55,7 +41,7 @@ let linea1Stations: [Station] = [
     ),
 
     Station(
-        name: "San Martín",
+        name: "Santa Rosa",
         line: "Línea 1",
         index: 2,
         hasElevator: true,
@@ -65,7 +51,7 @@ let linea1Stations: [Station] = [
     ),
 
     Station(
-        name: "San Carlos",
+        name: "San Martín",
         line: "Línea 1",
         index: 3,
         hasElevator: true,
@@ -75,7 +61,7 @@ let linea1Stations: [Station] = [
     ),
 
     Station(
-        name: "Los Postes",
+        name: "San Carlos",
         line: "Línea 1",
         index: 4,
         hasElevator: true,
@@ -85,7 +71,7 @@ let linea1Stations: [Station] = [
     ),
 
     Station(
-        name: "Los Jardines",
+        name: "Los Postes",
         line: "Línea 1",
         index: 5,
         hasElevator: true,
@@ -95,7 +81,7 @@ let linea1Stations: [Station] = [
     ),
 
     Station(
-        name: "Pirámide del Sol",
+        name: "Los Jardines",
         line: "Línea 1",
         index: 6,
         hasElevator: true,
@@ -105,7 +91,7 @@ let linea1Stations: [Station] = [
     ),
 
     Station(
-        name: "Caja de Agua",
+        name: "Pirámide del Sol",
         line: "Línea 1",
         index: 7,
         hasElevator: true,
@@ -115,7 +101,7 @@ let linea1Stations: [Station] = [
     ),
 
     Station(
-        name: "Presbítero Maestro",
+        name: "Caja de Agua",
         line: "Línea 1",
         index: 8,
         hasElevator: true,
@@ -125,7 +111,7 @@ let linea1Stations: [Station] = [
     ),
 
     Station(
-        name: "El Ángel",
+        name: "Presbítero Maestro",
         line: "Línea 1",
         index: 9,
         hasElevator: true,
@@ -135,7 +121,7 @@ let linea1Stations: [Station] = [
     ),
 
     Station(
-        name: "Grau",
+        name: "El Ángel",
         line: "Línea 1",
         index: 10,
         hasElevator: true,
@@ -145,7 +131,7 @@ let linea1Stations: [Station] = [
     ),
 
     Station(
-        name: "Gamarra",
+        name: "Grau",
         line: "Línea 1",
         index: 11,
         hasElevator: true,
@@ -155,7 +141,7 @@ let linea1Stations: [Station] = [
     ),
 
     Station(
-        name: "Arriola",
+        name: "Gamarra",
         line: "Línea 1",
         index: 12,
         hasElevator: true,
@@ -165,9 +151,19 @@ let linea1Stations: [Station] = [
     ),
 
     Station(
-        name: "La Cultura",
+        name: "Arriola",
         line: "Línea 1",
         index: 13,
+        hasElevator: true,
+        nearbyRoads: [],
+        connections: [],
+        panamericanVenue: nil
+    ),
+
+    Station(
+        name: "La Cultura",
+        line: "Línea 1",
+        index: 14,
         hasElevator: true,
         nearbyRoads: [],
         connections: [],
@@ -177,7 +173,7 @@ let linea1Stations: [Station] = [
     Station(
         name: "San Borja Sur",
         line: "Línea 1",
-        index: 14,
+        index: 15,
         hasElevator: true,
         nearbyRoads: [],
         connections: [],
@@ -187,7 +183,7 @@ let linea1Stations: [Station] = [
     Station(
         name: "Angamos",
         line: "Línea 1",
-        index: 15,
+        index: 16,
         hasElevator: true,
         nearbyRoads: [],
         connections: [],
@@ -197,7 +193,7 @@ let linea1Stations: [Station] = [
     Station(
         name: "Cabitos",
         line: "Línea 1",
-        index: 16,
+        index: 17,
         hasElevator: true,
         nearbyRoads: [],
         connections: [],
@@ -207,7 +203,7 @@ let linea1Stations: [Station] = [
     Station(
         name: "Ayacucho",
         line: "Línea 1",
-        index: 17,
+        index: 18,
         hasElevator: true,
         nearbyRoads: [],
         connections: [],
@@ -217,7 +213,7 @@ let linea1Stations: [Station] = [
     Station(
         name: "Jorge Chávez",
         line: "Línea 1",
-        index: 18,
+        index: 19,
         hasElevator: true,
         nearbyRoads: [],
         connections: [],
@@ -227,7 +223,7 @@ let linea1Stations: [Station] = [
     Station(
         name: "Atocongo",
         line: "Línea 1",
-        index: 19,
+        index: 20,
         hasElevator: true,
         nearbyRoads: [],
         connections: [],
@@ -237,7 +233,7 @@ let linea1Stations: [Station] = [
     Station(
         name: "San Juan",
         line: "Línea 1",
-        index: 20,
+        index: 21,
         hasElevator: true,
         nearbyRoads: [],
         connections: [],
@@ -247,7 +243,7 @@ let linea1Stations: [Station] = [
     Station(
         name: "María Auxiliadora",
         line: "Línea 1",
-        index: 21,
+        index: 22,
         hasElevator: true,
         nearbyRoads: [],
         connections: [],
@@ -257,7 +253,7 @@ let linea1Stations: [Station] = [
     Station(
         name: "Villa María",
         line: "Línea 1",
-        index: 22,
+        index: 23,
         hasElevator: true,
         nearbyRoads: [],
         connections: [],
@@ -267,7 +263,7 @@ let linea1Stations: [Station] = [
     Station(
         name: "Pumacahua",
         line: "Línea 1",
-        index: 23,
+        index: 24,
         hasElevator: true,
         nearbyRoads: [],
         connections: [],
@@ -277,7 +273,7 @@ let linea1Stations: [Station] = [
     Station(
         name: "Parque Industrial",
         line: "Línea 1",
-        index: 24,
+        index: 25,
         hasElevator: true,
         nearbyRoads: [],
         connections: [],
@@ -287,25 +283,24 @@ let linea1Stations: [Station] = [
     Station(
         name: "Villa El Salvador",
         line: "Línea 1",
-        index: 25,
+        index: 26,
         hasElevator: true,
         nearbyRoads: [],
         connections: [],
         panamericanVenue: "Polideportivo Villa El Salvador"
     )
 ]
+
 // ===============================================================
-// 3. ESTACIONES DE LA LÍNEA 2
+// 3. LÍNEA 2
 // ===============================================================
 
-// Contiene las estaciones de la Línea 2 consideradas para el
-// sistema integrado de transporte.
 let linea2Stations: [Station] = [
 
     Station(
         name: "Evitamiento",
         line: "Línea 2",
-        index: 0,
+        index: 1,
         hasElevator: true,
         nearbyRoads: [
             "Vía de Evitamiento",
@@ -318,7 +313,7 @@ let linea2Stations: [Station] = [
     Station(
         name: "Óvalo Santa Anita",
         line: "Línea 2",
-        index: 1,
+        index: 2,
         hasElevator: true,
         nearbyRoads: [
             "Carretera Central",
@@ -331,7 +326,7 @@ let linea2Stations: [Station] = [
     Station(
         name: "Colectora Industrial",
         line: "Línea 2",
-        index: 2,
+        index: 3,
         hasElevator: true,
         nearbyRoads: [
             "Carretera Central",
@@ -344,7 +339,7 @@ let linea2Stations: [Station] = [
     Station(
         name: "Hermilio Valdizán",
         line: "Línea 2",
-        index: 3,
+        index: 4,
         hasElevator: true,
         nearbyRoads: [
             "Carretera Central"
@@ -356,7 +351,7 @@ let linea2Stations: [Station] = [
     Station(
         name: "Mercado Santa Anita",
         line: "Línea 2",
-        index: 4,
+        index: 5,
         hasElevator: true,
         nearbyRoads: [
             "Carretera Central",
@@ -366,18 +361,17 @@ let linea2Stations: [Station] = [
         panamericanVenue: nil
     )
 ]
+
 // ===============================================================
-// 4. ESTACIONES DEL METROPOLITANO
+// 4. METROPOLITANO
 // ===============================================================
 
-// Estaciones del Metropolitano incluidas en el sistema integrado.
-// Se registran sus vías cercanas, conexiones y sede Panamericana.
 let metropolitanoStations: [Station] = [
 
     Station(
         name: "Estadio Nacional",
         line: "Metropolitano",
-        index: 0,
+        index: 1,
         hasElevator: true,
         nearbyRoads: [
             "Av. Paseo de la República"
@@ -392,7 +386,7 @@ let metropolitanoStations: [Station] = [
     Station(
         name: "Central",
         line: "Metropolitano",
-        index: 1,
+        index: 2,
         hasElevator: true,
         nearbyRoads: [
             "Av. Garcilaso de la Vega"
@@ -403,19 +397,16 @@ let metropolitanoStations: [Station] = [
         panamericanVenue: nil
     )
 ]
+
 // ===============================================================
-// 5. DATOS GENERALES DEL SISTEMA
+// 5. DATOS GENERALES
 // ===============================================================
 
-// Agrupa todas las estaciones de las diferentes modalidades
-// de transporte para facilitar las búsquedas y consultas.
 let allStations =
     linea1Stations +
     linea2Stations +
     metropolitanoStations
 
-// Diccionario que permite encontrar rápidamente una estación
-// utilizando su nombre como clave.
 let metroDictionary: [String: Station] =
     Dictionary(
         uniqueKeysWithValues: allStations.map {
@@ -423,32 +414,26 @@ let metroDictionary: [String: Station] =
         }
     )
 
-// Relaciona cada línea con la lista de nombres de sus estaciones.
 let linesDictionary: [String: [String]] = [
     "Línea 1": linea1Stations.map { $0.name },
     "Línea 2": linea2Stations.map { $0.name },
     "Metropolitano": metropolitanoStations.map { $0.name }
 ]
+
 // ===============================================================
-// 6. FUNCIONES AUXILIARES Y NORMALIZACIÓN
+// 6. FUNCIONES AUXILIARES
 // ===============================================================
 
-// Imprime una línea separadora para organizar la información
-// mostrada en la terminal.
 func separador() {
     print(String(repeating: "=", count: 65))
 }
 
-// Pausa la ejecución hasta que el usuario presione ENTER.
 func pausa() {
     print("")
     print("Presione ENTER para continuar...")
     _ = readLine()
 }
 
-// Normaliza un texto para facilitar las búsquedas.
-// Elimina espacios innecesarios, ignora tildes y convierte
-// todo el contenido a minúsculas.
 func normalizarTexto(_ texto: String) -> String {
     texto
         .trimmingCharacters(in: .whitespacesAndNewlines)
@@ -463,20 +448,20 @@ func normalizarTexto(_ texto: String) -> String {
             options: .regularExpression
         )
 }
+
 // ===============================================================
-// 7. BÚSQUEDA DE ESTACIONES Y LÍNEAS
+// 7. BÚSQUEDA DE ESTACIÓN
 // ===============================================================
 
-// Busca una estación utilizando su nombre, alias o una coincidencia
-// parcial. La normalización permite buscar sin tildes ni diferencias
-// entre mayúsculas y minúsculas.
 func buscarEstacion(_ entrada: String) -> Station? {
+
     let limpio = normalizarTexto(entrada)
 
     if limpio.isEmpty {
         return nil
     }
 
+    // Coincidencia exacta
     if let estacion = allStations.first(
         where: {
             normalizarTexto($0.name) == limpio
@@ -485,25 +470,37 @@ func buscarEstacion(_ entrada: String) -> Station? {
         return estacion
     }
 
+    // Alias
     let alias: [String: String] = [
+
         "bayovar": "Bayóvar",
+
         "linea 1": "Línea 1",
         "l1": "Línea 1",
         "linea uno": "Línea 1",
+
         "linea 2": "Línea 2",
         "l2": "Línea 2",
         "linea dos": "Línea 2",
+
         "miguel grau": "Grau",
         "nicolas arriola": "Arriola",
+
         "postes": "Los Postes",
         "los postes": "Los Postes",
+
         "salvador": "Villa El Salvador",
         "villa salvador": "Villa El Salvador",
         "villa el salvador": "Villa El Salvador",
+
         "cultura": "La Cultura",
+
         "ovalo santa anita": "Óvalo Santa Anita",
+
         "hermilio valdizan": "Hermilio Valdizán",
+
         "mercado santa anita": "Mercado Santa Anita",
+
         "estadio": "Estadio Nacional"
     ]
 
@@ -511,6 +508,7 @@ func buscarEstacion(_ entrada: String) -> Station? {
         return metroDictionary[nombreReal]
     }
 
+    // Coincidencia parcial
     if let estacion = allStations.first(
         where: {
             normalizarTexto($0.name).contains(limpio)
@@ -522,20 +520,26 @@ func buscarEstacion(_ entrada: String) -> Station? {
     return nil
 }
 
-// Busca una línea utilizando diferentes formas de escritura,
-// incluyendo números, abreviaturas y nombres completos.
+// ===============================================================
+// 8. BÚSQUEDA DE LÍNEA
+// ===============================================================
+
 func buscarLinea(_ entrada: String) -> String? {
+
     let limpio = normalizarTexto(entrada)
 
     let aliasLineas: [String: String] = [
+
         "1": "Línea 1",
         "l1": "Línea 1",
         "linea 1": "Línea 1",
         "linea uno": "Línea 1",
+
         "2": "Línea 2",
         "l2": "Línea 2",
         "linea 2": "Línea 2",
         "linea dos": "Línea 2",
+
         "metro": "Metropolitano",
         "metropolitano": "Metropolitano"
     ]
@@ -545,6 +549,7 @@ func buscarLinea(_ entrada: String) -> String? {
     }
 
     for linea in linesDictionary.keys {
+
         if normalizarTexto(linea) == limpio {
             return linea
         }
@@ -552,185 +557,307 @@ func buscarLinea(_ entrada: String) -> String? {
 
     return nil
 }
+
 // ===============================================================
-// 8. CONSULTA Y DETALLE DE ESTACIONES
+// 9. CONSULTAR LÍNEA
 // ===============================================================
 
-// Muestra todas las estaciones pertenecientes a una línea
-// determinada y las presenta de forma numerada.
 func consultarLinea(nombreLinea: String) {
-    guard let linea = buscarLinea(nombreLinea) else {
-        print("❌ Línea no encontrada.")
+
+    guard
+        let linea = buscarLinea(nombreLinea),
+        let estaciones = linesDictionary[linea]
+    else {
+
+        print("")
+        print("❌ La línea '\(nombreLinea)' no fue encontrada.")
+        print("")
+        print("Opciones válidas:")
+        print("1 - Línea 1")
+        print("2 - Línea 2")
+        print("M - Metropolitano")
         return
     }
 
-    guard let estaciones = linesDictionary[linea] else {
-        print("❌ No hay estaciones registradas para esta línea.")
-        return
+    print("")
+    separador()
+    print("🚆 ESTACIONES DE \(linea.uppercased())")
+    separador()
+
+    for (index, estacion) in estaciones.enumerated() {
+
+        print(
+            String(
+                format: "%2d. %@",
+                index + 1,
+                estacion
+            )
+        )
     }
 
     separador()
-    print("🚆 \(linea)")
-    separador()
-
-    for (indice, estacion) in estaciones.enumerated() {
-        print("\(indice + 1). \(estacion)")
-    }
 }
 
-// Muestra toda la información disponible de una estación,
-// incluyendo línea, posición, accesibilidad, vías cercanas,
-// conexiones y sede Panamericana.
+// ===============================================================
+// 10. DETALLE DE ESTACIÓN
+// ===============================================================
+
 func verDetalleEstacion(nombreIngresado: String) {
+
     guard let estacion = buscarEstacion(nombreIngresado) else {
-        print("❌ Estación no encontrada.")
+
+        print("")
+        print(
+            "❌ No se encontró la estación '\(nombreIngresado)'."
+        )
+
+        print("")
+        print("Ejemplos:")
+        print("• Los Postes")
+        print("• Villa El Salvador")
+        print("• Gamarra")
+        print("• La Cultura")
+        print("• Angamos")
+        print("• Óvalo Santa Anita")
+        print("• Mercado Santa Anita")
+
         return
     }
 
+    print("")
     separador()
-    print("📍 DETALLE DE ESTACIÓN")
+    print("📍 FICHA DE ESTACIÓN")
     separador()
 
-    print("Estación: \(estacion.name)")
-    print("Línea: \(estacion.line)")
-    print("Posición: \(estacion.index + 1)")
+    print("🚉 Estación: \(estacion.name)")
+    print("🚇 Línea: \(estacion.line)")
+    print("🔢 Posición: \(estacion.index)")
 
     print(
-        "Ascensor: \(estacion.hasElevator ? "Sí" : "No")"
+        "♿ Ascensores: " +
+        (estacion.hasElevator ? "Sí ✅" : "No ❌")
     )
 
-    if !estacion.nearbyRoads.isEmpty {
-        print("")
-        print("🛣️ Vías cercanas:")
+    if estacion.nearbyRoads.isEmpty {
 
-        for via in estacion.nearbyRoads {
-            print("   • \(via)")
-        }
+        print("🛣️ Vías cercanas: No registradas")
+
+    } else {
+
+        print(
+            "🛣️ Vías cercanas: " +
+            estacion.nearbyRoads.joined(
+                separator: ", "
+            )
+        )
     }
 
-    if !estacion.connections.isEmpty {
-        print("")
-        print("🔗 Conexiones:")
+    if estacion.connections.isEmpty {
 
-        for conexion in estacion.connections {
-            print("   • \(conexion)")
-        }
+        print("🔄 Conexiones: No registradas")
+
+    } else {
+
+        print(
+            "🔄 Conexiones: " +
+            estacion.connections.joined(
+                separator: ", "
+            )
+        )
     }
 
-    if let sede = estacion.panamericanVenue {
-        print("")
-        print("🏆 Sede Panamericana:")
-        print("   \(sede)")
+    if let recinto = estacion.panamericanVenue {
+
+        print("🏆 Sede Panamericana: \(recinto)")
+
+    } else {
+
+        print("🏆 Sede Panamericana: No registrada")
     }
 
     separador()
 }
+
 // ===============================================================
-// 9. RUTAS, TIEMPOS Y TARIFAS
+// 11. OBTENER RUTA
 // ===============================================================
 
-// Obtiene las estaciones que forman parte de una ruta cuando
-// el origen y destino pertenecen a la misma línea.
 func obtenerRuta(
     origen: Station,
     destino: Station
-) -> [Station] {
+) -> [String] {
 
     guard origen.line == destino.line else {
         return []
     }
 
-    if origen.index <= destino.index {
-        return allStations.filter {
-            $0.line == origen.line &&
-            $0.index >= origen.index &&
-            $0.index <= destino.index
-        }
-    } else {
-        return allStations
-            .filter {
-                $0.line == origen.line &&
-                $0.index <= origen.index &&
-                $0.index >= destino.index
-            }
-            .reversed()
+    guard let estaciones = linesDictionary[origen.line] else {
+        return []
     }
+
+    let inicio = min(
+        origen.index,
+        destino.index
+    )
+
+    let fin = max(
+        origen.index,
+        destino.index
+    )
+
+    let ruta = Array(
+        estaciones[(inicio - 1)...(fin - 1)]
+    )
+
+    if origen.index <= destino.index {
+        return ruta
+    }
+
+    return Array(ruta.reversed())
 }
 
-// Calcula la cantidad de estaciones entre el origen y destino.
+// ===============================================================
+// 12. CALCULAR ESTACIONES
+// ===============================================================
+
 func calcularEstaciones(
     origen: Station,
     destino: Station
 ) -> Int {
 
-    guard origen.line == destino.line else {
-        return 0
-    }
-
-    return abs(origen.index - destino.index)
+    abs(
+        origen.index -
+        destino.index
+    )
 }
 
-// Calcula un tiempo estimado de viaje.
-// Para viajes dentro de una misma línea se consideran 2 minutos
-// por estación. Para viajes entre líneas se utiliza un tiempo
-// estimado de transferencia.
+// ===============================================================
+// 13. CALCULAR TIEMPO
+// ===============================================================
+
 func calcularTiempo(
     origen: Station,
     destino: Station
 ) -> Int {
 
     if origen.line == destino.line {
+
         let estaciones = calcularEstaciones(
             origen: origen,
             destino: destino
         )
 
-        return estaciones * 2
-    }
+        // Estimación académica:
+        // 2 minutos por estación.
 
-    return 25
+        return estaciones * 2
+
+    } else {
+
+        // Tiempo estimado incluyendo transbordo.
+
+        return 25
+    }
 }
 
-// Calcula la tarifa según el tipo de pasajero.
-func calcularTarifa(esEstudiante: Bool) -> String {
+// ===============================================================
+// 14. TARIFA
+// ===============================================================
+
+func calcularTarifa(
+    esEstudiante: Bool
+) -> String {
 
     if esEstudiante {
+
         return "S/ 0.75 - Tarifa estudiantil"
+
+    } else {
+
+        return "S/ 1.50 - Tarifa general"
     }
-
-    return "S/ 1.50 - Tarifa general"
 }
+
 // ===============================================================
-// 10. PLANIFICADOR DE VIAJES
+// 15. PLANIFICADOR DE VIAJE
 // ===============================================================
 
-// Permite al usuario ingresar una estación de origen y una
-// estación de destino para calcular información básica del viaje.
 func planificarViaje() {
 
+    print("")
     separador()
-    print("🧭 PLANIFICADOR DE VIAJE")
+    print("🚆 PLANIFICADOR DE VIAJE")
     separador()
 
-    print("Ingrese la estación de origen:")
-    guard let origenIngresado = readLine(),
-          let origen = buscarEstacion(origenIngresado) else {
-        print("❌ No se encontró la estación de origen.")
+    print(
+        "Ingrese estación de ORIGEN: ",
+        terminator: ""
+    )
+
+    let origenInput = readLine() ?? ""
+
+    print(
+        "Ingrese estación de DESTINO: ",
+        terminator: ""
+    )
+
+    let destinoInput = readLine() ?? ""
+
+    if normalizarTexto(origenInput).isEmpty ||
+       normalizarTexto(destinoInput).isEmpty {
+
+        print("")
+        print("❌ Debe ingresar origen y destino.")
         return
     }
 
-    print("Ingrese la estación de destino:")
-    guard let destinoIngresado = readLine(),
-          let destino = buscarEstacion(destinoIngresado) else {
-        print("❌ No se encontró la estación de destino.")
+    guard let origen = buscarEstacion(
+        origenInput
+    ) else {
+
+        print("")
+        print(
+            "❌ No se encontró el origen: \(origenInput)"
+        )
+
+        return
+    }
+
+    guard let destino = buscarEstacion(
+        destinoInput
+    ) else {
+
+        print("")
+        print(
+            "❌ No se encontró el destino: \(destinoInput)"
+        )
+
+        return
+    }
+
+    if origen.name == destino.name {
+
+        print("")
+        print(
+            "⚠️ El origen y destino son la misma estación."
+        )
+
         return
     }
 
     print("")
-    print("¿Es estudiante? (s/n)")
-    let respuestaEstudiante = readLine()?.lowercased() ?? "n"
+    print(
+        "¿Aplica tarifa estudiantil? (s/n): ",
+        terminator: ""
+    )
 
-    let esEstudiante = respuestaEstudiante == "s"
+    let respuesta = normalizarTexto(
+        readLine() ?? ""
+    )
+
+    let esEstudiante =
+        respuesta == "s" ||
+        respuesta == "si"
 
     let tiempo = calcularTiempo(
         origen: origen,
@@ -741,18 +868,22 @@ func planificarViaje() {
         esEstudiante: esEstudiante
     )
 
+    print("")
     separador()
     print("📋 RESUMEN DEL VIAJE")
     separador()
 
-    print("Origen: \(origen.name)")
-    print("Destino: \(destino.name)")
-    print("Línea de origen: \(origen.line)")
-    print("Línea de destino: \(destino.line)")
-    print("Tiempo estimado: \(tiempo) minutos")
-    print("Tarifa: \(tarifa)")
+    print("📍 Origen: \(origen.name)")
+    print("🎯 Destino: \(destino.name)")
+    print("🚇 Línea origen: \(origen.line)")
+    print("🚇 Línea destino: \(destino.line)")
 
     if origen.line == destino.line {
+
+        let estaciones = calcularEstaciones(
+            origen: origen,
+            destino: destino
+        )
 
         let ruta = obtenerRuta(
             origen: origen,
@@ -760,165 +891,245 @@ func planificarViaje() {
         )
 
         print("")
-        print("🚆 Ruta:")
+        print(
+            "🚉 Estaciones entre origen y destino: \(estaciones)"
+        )
 
-        for (indice, estacion) in ruta.enumerated() {
-            print("   \(indice + 1). \(estacion.name)")
-        }
+        print(
+            "⏱️ Tiempo estimado: ~\(tiempo) minutos"
+        )
+
+        print("")
+        print("🗺️ RUTA:")
+
+        print(
+            ruta.joined(
+                separator: " → "
+            )
+        )
 
     } else {
 
         print("")
-        print("🔄 El viaje requiere transferencia entre líneas.")
-        print("   Tiempo estimado de transferencia incluido.")
+        print("🔄 Tipo: Requiere transbordo")
+
+        print(
+            "⏱️ Tiempo estimado: ~\(tiempo) minutos"
+        )
+
+        print("")
+        print(
+            "ℹ️ Las estaciones pertenecen a líneas diferentes."
+        )
+
+        print(
+            "ℹ️ El sistema muestra una estimación académica."
+        )
     }
+
+    print("")
+    print("💳 Tarifa: \(tarifa)")
 
     separador()
 }
+
 // ===============================================================
-// 11. INFORMACIÓN ADICIONAL DEL SISTEMA
+// 16. MOSTRAR ESTACIONES
 // ===============================================================
 
-// Muestra todas las estaciones disponibles organizadas
-// por línea de transporte.
 func mostrarEstacionesDisponibles() {
 
+    print("")
     separador()
-    print("📋 ESTACIONES DISPONIBLES")
+    print("📍 ESTACIONES DISPONIBLES")
     separador()
 
-    for linea in ["Línea 1", "Línea 2", "Metropolitano"] {
+    for linea in [
+        "Línea 1",
+        "Línea 2",
+        "Metropolitano"
+    ] {
 
         print("")
-        print("🚆 \(linea)")
+        print("🚇 \(linea):")
 
-        if let estaciones = linesDictionary[linea] {
+        if let estaciones =
+            linesDictionary[linea] {
 
-            for estacion in estaciones {
-                print("   • \(estacion)")
-            }
+            print(
+                estaciones.joined(
+                    separator: " • "
+                )
+            )
         }
     }
 
+    print("")
     separador()
 }
 
-// Muestra las estaciones relacionadas con sedes de los
-// Juegos Panamericanos.
+// ===============================================================
+// 17. MOSTRAR SEDES PANAMERICANAS
+// ===============================================================
+
 func mostrarSedesPanamericanas() {
 
+    print("")
     separador()
     print("🏆 SEDES PANAMERICANAS")
     separador()
 
-    let estacionesConSede = allStations.filter {
-        $0.panamericanVenue != nil
-    }
+    let estacionesConSede =
+        allStations.filter {
+            $0.panamericanVenue != nil
+        }
 
     if estacionesConSede.isEmpty {
-        print("No hay sedes Panamericanas registradas.")
+
+        print("No existen sedes registradas.")
+
     } else {
 
         for estacion in estacionesConSede {
 
-            print("")
-            print("🏟️ \(estacion.panamericanVenue ?? "")")
-            print("   Estación: \(estacion.name)")
-            print("   Línea: \(estacion.line)")
+            if let sede =
+                estacion.panamericanVenue {
+
+                print("")
+                print("🏆 \(sede)")
+                print("   🚉 Estación: \(estacion.name)")
+                print("   🚇 Línea: \(estacion.line)")
+            }
         }
     }
 
+    print("")
     separador()
 }
 
-// Permite buscar una estación de manera interactiva y mostrar
-// inmediatamente todos sus detalles.
+// ===============================================================
+// 18. BUSCADOR DE ESTACIÓN
+// ===============================================================
+
 func buscarEstacionInteractivo() {
 
+    print("")
     separador()
     print("🔎 BUSCAR ESTACIÓN")
     separador()
 
-    print("Ingrese el nombre de la estación:")
+    print(
+        "Ingrese nombre o parte del nombre: ",
+        terminator: ""
+    )
 
-    guard let entrada = readLine() else {
-        print("❌ Entrada no válida.")
+    let entrada = readLine() ?? ""
+
+    guard let estacion =
+        buscarEstacion(entrada) else {
+
+        print("")
+        print(
+            "❌ No se encontró ninguna estación."
+        )
+
         return
     }
 
     verDetalleEstacion(
-        nombreIngresado: entrada
+        nombreIngresado: estacion.name
     )
 }
 
-// Muestra información general del proyecto y las cantidades
-// de estaciones registradas en el sistema.
+// ===============================================================
+// 19. INFORMACIÓN DEL SISTEMA
+// ===============================================================
+
 func mostrarInformacionSistema() {
 
+    print("")
     separador()
     print("ℹ️ INFORMACIÓN DEL SISTEMA")
     separador()
 
-    print("Estudiante: Sheila Diaz Rojas")
-    print("Asignatura: Desarrollo Móvil Avanzado")
-    print("Sistema: Transporte Integrado de Lima")
     print("")
+    print("👩‍💻 Estudiante: Sheila Diaz Rojas")
+    print("📚 Curso: Desarrollo Móvil Avanzado")
+    print("🇵🇪 Sistema: Transporte Integrado de Lima")
 
+    print("")
     print("🚆 Línea 1: \(linea1Stations.count) estaciones")
     print("🚆 Línea 2: \(linea2Stations.count) estaciones")
-    print("🚌 Metropolitano: \(metropolitanoStations.count) estaciones")
-    print("📍 Total: \(allStations.count) estaciones")
+    print(
+        "🚌 Metropolitano: \(metropolitanoStations.count) estaciones"
+    )
 
     print("")
-    print("⚠️ Los tiempos y tarifas utilizados en este proyecto")
-    print("son valores académicos de referencia.")
+    print(
+        "📊 Total registrado: \(allStations.count) estaciones"
+    )
+
+    print("")
+    print("⚠️ Nota:")
+    print(
+        "Los tiempos y tarifas utilizados por el programa"
+    )
+    print(
+        "son datos académicos configurados para el proyecto."
+    )
 
     separador()
 }
 
-// Muestra el enlace de referencia del mapa del sistema de
-// transporte y proporciona una indicación para consultarlo.
+// ===============================================================
+// 20. MAPA
+// ===============================================================
+
 func mostrarMapa() {
 
+    print("")
     separador()
-    print("🗺️ MAPA DEL SISTEMA")
+    print("🗺️ MAPA DEL METRO DE LIMA")
     separador()
-
-    print("Mapa de referencia:")
-    print("https://commons.wikimedia.org/wiki/File:Metro_de_Lima_-_Lineas_1_y_2.png")
 
     print("")
-    print("Copie el enlace y ábralo en su navegador para")
-    print("consultar el mapa de referencia.")
+    print(
+        "https://upload.wikimedia.org/wikipedia/commons/0/05/Lima_Metro_Map.svg"
+    )
+
+    print("")
+    print(
+        "💡 Copie el enlace y ábralo en su navegador."
+    )
 
     separador()
 }
+
 // ===============================================================
-// 12. MENÚ PRINCIPAL INTERACTIVO
+// 21. MENÚ PRINCIPAL
 // ===============================================================
 
-// Controla la ejecución del menú principal del sistema.
 var ejecutando = true
 
-// Encabezado principal del sistema.
 print("")
 separador()
+
 print("🥇 SISTEMA INTEGRADO DE TRANSPORTE - LIMA 🥈")
+
 separador()
+
 print("🚆 Metro de Lima - Línea 1")
 print("🚆 Metro de Lima - Línea 2")
 print("🚌 Metropolitano")
 print("🏆 Juegos Panamericanos")
+
 separador()
 
-// Bucle principal que mantiene activo el sistema hasta que
-// el usuario seleccione la opción de salida.
 while ejecutando {
 
     print("")
-    separador()
-    print("📋 MENÚ PRINCIPAL")
-    separador()
+    print("📌 MENÚ PRINCIPAL")
+    print("")
 
     print("1. 🚆 Ver estaciones por línea")
     print("2. 📍 Buscar detalle de estación")
@@ -930,69 +1141,107 @@ while ejecutando {
     print("8. ℹ️ Información del sistema")
     print("9. 🚪 Salir")
 
-    separador()
-    print("Seleccione una opción:")
+    print("")
 
-    let opcion = readLine() ?? ""
+    print(
+        "Seleccione una opción (1-9): ",
+        terminator: ""
+    )
+
+    let opcion =
+        normalizarTexto(
+            readLine() ?? ""
+        )
 
     switch opcion {
 
     case "1":
+
         print("")
-        print("Ingrese la línea:")
-        if let linea = readLine() {
-            consultarLinea(nombreLinea: linea)
-        }
+        print(
+            "Ingrese línea (1, 2 o Metropolitano): ",
+            terminator: ""
+        )
+
+        let linea =
+            readLine() ?? ""
+
+        consultarLinea(
+            nombreLinea: linea
+        )
+
         pausa()
 
     case "2":
+
         mostrarEstacionesDisponibles()
 
         print("")
-        print("Ingrese el nombre de la estación:")
-        if let estacion = readLine() {
-            verDetalleEstacion(
-                nombreIngresado: estacion
-            )
-        }
+        print(
+            "Ingrese el nombre de la estación: ",
+            terminator: ""
+        )
+
+        let estacion =
+            readLine() ?? ""
+
+        verDetalleEstacion(
+            nombreIngresado: estacion
+        )
+
         pausa()
 
     case "3":
+
         planificarViaje()
         pausa()
 
     case "4":
+
         mostrarEstacionesDisponibles()
         pausa()
 
     case "5":
+
         mostrarSedesPanamericanas()
         pausa()
 
     case "6":
+
         buscarEstacionInteractivo()
         pausa()
 
     case "7":
+
         mostrarMapa()
         pausa()
 
     case "8":
+
         mostrarInformacionSistema()
         pausa()
 
     case "9":
+
         print("")
         separador()
-        print("👋 Gracias por utilizar el sistema.")
-        print("🚆 ¡Buen viaje!")
+
+        print(
+            "👋 ¡Gracias por utilizar el sistema!"
+        )
+
+        print(
+            "🇵🇪 Transporte Integrado de Lima"
+        )
+
         separador()
 
         ejecutando = false
 
     default:
+
         print("")
         print("❌ Opción no válida.")
-        print("Por favor, seleccione una opción del 1 al 9.")
+        print("👉 Ingrese un número del 1 al 9.")
     }
 }
