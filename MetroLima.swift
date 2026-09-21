@@ -403,3 +403,29 @@ let metropolitanoStations: [Station] = [
         panamericanVenue: nil
     )
 ]
+// ===============================================================
+// 5. DATOS GENERALES DEL SISTEMA
+// ===============================================================
+
+// Agrupa todas las estaciones de las diferentes modalidades
+// de transporte para facilitar las búsquedas y consultas.
+let allStations =
+    linea1Stations +
+    linea2Stations +
+    metropolitanoStations
+
+// Diccionario que permite encontrar rápidamente una estación
+// utilizando su nombre como clave.
+let metroDictionary: [String: Station] =
+    Dictionary(
+        uniqueKeysWithValues: allStations.map {
+            ($0.name, $0)
+        }
+    )
+
+// Relaciona cada línea con la lista de nombres de sus estaciones.
+let linesDictionary: [String: [String]] = [
+    "Línea 1": linea1Stations.map { $0.name },
+    "Línea 2": linea2Stations.map { $0.name },
+    "Metropolitano": metropolitanoStations.map { $0.name }
+]
