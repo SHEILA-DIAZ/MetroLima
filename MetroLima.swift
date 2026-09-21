@@ -552,3 +552,76 @@ func buscarLinea(_ entrada: String) -> String? {
 
     return nil
 }
+// ===============================================================
+// 8. CONSULTA Y DETALLE DE ESTACIONES
+// ===============================================================
+
+// Muestra todas las estaciones pertenecientes a una línea
+// determinada y las presenta de forma numerada.
+func consultarLinea(nombreLinea: String) {
+    guard let linea = buscarLinea(nombreLinea) else {
+        print("❌ Línea no encontrada.")
+        return
+    }
+
+    guard let estaciones = linesDictionary[linea] else {
+        print("❌ No hay estaciones registradas para esta línea.")
+        return
+    }
+
+    separador()
+    print("🚆 \(linea)")
+    separador()
+
+    for (indice, estacion) in estaciones.enumerated() {
+        print("\(indice + 1). \(estacion)")
+    }
+}
+
+// Muestra toda la información disponible de una estación,
+// incluyendo línea, posición, accesibilidad, vías cercanas,
+// conexiones y sede Panamericana.
+func verDetalleEstacion(nombreIngresado: String) {
+    guard let estacion = buscarEstacion(nombreIngresado) else {
+        print("❌ Estación no encontrada.")
+        return
+    }
+
+    separador()
+    print("📍 DETALLE DE ESTACIÓN")
+    separador()
+
+    print("Estación: \(estacion.name)")
+    print("Línea: \(estacion.line)")
+    print("Posición: \(estacion.index + 1)")
+
+    print(
+        "Ascensor: \(estacion.hasElevator ? "Sí" : "No")"
+    )
+
+    if !estacion.nearbyRoads.isEmpty {
+        print("")
+        print("🛣️ Vías cercanas:")
+
+        for via in estacion.nearbyRoads {
+            print("   • \(via)")
+        }
+    }
+
+    if !estacion.connections.isEmpty {
+        print("")
+        print("🔗 Conexiones:")
+
+        for conexion in estacion.connections {
+            print("   • \(conexion)")
+        }
+    }
+
+    if let sede = estacion.panamericanVenue {
+        print("")
+        print("🏆 Sede Panamericana:")
+        print("   \(sede)")
+    }
+
+    separador()
+}
