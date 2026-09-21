@@ -366,3 +366,40 @@ let linea2Stations: [Station] = [
         panamericanVenue: nil
     )
 ]
+// ===============================================================
+// 4. ESTACIONES DEL METROPOLITANO
+// ===============================================================
+
+// Estaciones del Metropolitano incluidas en el sistema integrado.
+// Se registran sus vías cercanas, conexiones y sede Panamericana.
+let metropolitanoStations: [Station] = [
+
+    Station(
+        name: "Estadio Nacional",
+        line: "Metropolitano",
+        index: 0,
+        hasElevator: true,
+        nearbyRoads: [
+            "Av. Paseo de la República"
+        ],
+        connections: [
+            "Ruta A",
+            "Ruta C"
+        ],
+        panamericanVenue: "Estadio Nacional"
+    ),
+
+    Station(
+        name: "Central",
+        line: "Metropolitano",
+        index: 1,
+        hasElevator: true,
+        nearbyRoads: [
+            "Av. Garcilaso de la Vega"
+        ],
+        connections: [
+            "Conexión con Línea 2"
+        ],
+        panamericanVenue: nil
+    )
+]
