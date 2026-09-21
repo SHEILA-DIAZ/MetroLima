@@ -429,3 +429,37 @@ let linesDictionary: [String: [String]] = [
     "Línea 2": linea2Stations.map { $0.name },
     "Metropolitano": metropolitanoStations.map { $0.name }
 ]
+// ===============================================================
+// 6. FUNCIONES AUXILIARES Y NORMALIZACIÓN
+// ===============================================================
+
+// Imprime una línea separadora para organizar la información
+// mostrada en la terminal.
+func separador() {
+    print(String(repeating: "=", count: 65))
+}
+
+// Pausa la ejecución hasta que el usuario presione ENTER.
+func pausa() {
+    print("")
+    print("Presione ENTER para continuar...")
+    _ = readLine()
+}
+
+// Normaliza un texto para facilitar las búsquedas.
+// Elimina espacios innecesarios, ignora tildes y convierte
+// todo el contenido a minúsculas.
+func normalizarTexto(_ texto: String) -> String {
+    texto
+        .trimmingCharacters(in: .whitespacesAndNewlines)
+        .folding(
+            options: .diacriticInsensitive,
+            locale: .current
+        )
+        .lowercased()
+        .replacingOccurrences(
+            of: #"\s+"#,
+            with: " ",
+            options: .regularExpression
+        )
+}
