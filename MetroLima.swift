@@ -625,3 +625,78 @@ func verDetalleEstacion(nombreIngresado: String) {
 
     separador()
 }
+// ===============================================================
+// 9. RUTAS, TIEMPOS Y TARIFAS
+// ===============================================================
+
+// Obtiene las estaciones que forman parte de una ruta cuando
+// el origen y destino pertenecen a la misma línea.
+func obtenerRuta(
+    origen: Station,
+    destino: Station
+) -> [Station] {
+
+    guard origen.line == destino.line else {
+        return []
+    }
+
+    if origen.index <= destino.index {
+        return allStations.filter {
+            $0.line == origen.line &&
+            $0.index >= origen.index &&
+            $0.index <= destino.index
+        }
+    } else {
+        return allStations
+            .filter {
+                $0.line == origen.line &&
+                $0.index <= origen.index &&
+                $0.index >= destino.index
+            }
+            .reversed()
+    }
+}
+
+// Calcula la cantidad de estaciones entre el origen y destino.
+func calcularEstaciones(
+    origen: Station,
+    destino: Station
+) -> Int {
+
+    guard origen.line == destino.line else {
+        return 0
+    }
+
+    return abs(origen.index - destino.index)
+}
+
+// Calcula un tiempo estimado de viaje.
+// Para viajes dentro de una misma línea se consideran 2 minutos
+// por estación. Para viajes entre líneas se utiliza un tiempo
+// estimado de transferencia.
+func calcularTiempo(
+    origen: Station,
+    destino: Station
+) -> Int {
+
+    if origen.line == destino.line {
+        let estaciones = calcularEstaciones(
+            origen: origen,
+            destino: destino
+        )
+
+        return estaciones * 2
+    }
+
+    return 25
+}
+
+// Calcula la tarifa según el tipo de pasajero.
+func calcularTarifa(esEstudiante: Bool) -> String {
+
+    if esEstudiante {
+        return "S/ 0.75 - Tarifa estudiantil"
+    }
+
+    return "S/ 1.50 - Tarifa general"
+}
