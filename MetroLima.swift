@@ -463,3 +463,92 @@ func normalizarTexto(_ texto: String) -> String {
             options: .regularExpression
         )
 }
+// ===============================================================
+// 7. BÚSQUEDA DE ESTACIONES Y LÍNEAS
+// ===============================================================
+
+// Busca una estación utilizando su nombre, alias o una coincidencia
+// parcial. La normalización permite buscar sin tildes ni diferencias
+// entre mayúsculas y minúsculas.
+func buscarEstacion(_ entrada: String) -> Station? {
+    let limpio = normalizarTexto(entrada)
+
+    if limpio.isEmpty {
+        return nil
+    }
+
+    if let estacion = allStations.first(
+        where: {
+            normalizarTexto($0.name) == limpio
+        }
+    ) {
+        return estacion
+    }
+
+    let alias: [String: String] = [
+        "bayovar": "Bayóvar",
+        "linea 1": "Línea 1",
+        "l1": "Línea 1",
+        "linea uno": "Línea 1",
+        "linea 2": "Línea 2",
+        "l2": "Línea 2",
+        "linea dos": "Línea 2",
+        "miguel grau": "Grau",
+        "nicolas arriola": "Arriola",
+        "postes": "Los Postes",
+        "los postes": "Los Postes",
+        "salvador": "Villa El Salvador",
+        "villa salvador": "Villa El Salvador",
+        "villa el salvador": "Villa El Salvador",
+        "cultura": "La Cultura",
+        "ovalo santa anita": "Óvalo Santa Anita",
+        "hermilio valdizan": "Hermilio Valdizán",
+        "mercado santa anita": "Mercado Santa Anita",
+        "estadio": "Estadio Nacional"
+    ]
+
+    if let nombreReal = alias[limpio] {
+        return metroDictionary[nombreReal]
+    }
+
+    if let estacion = allStations.first(
+        where: {
+            normalizarTexto($0.name).contains(limpio)
+        }
+    ) {
+        return estacion
+    }
+
+    return nil
+}
+
+// Busca una línea utilizando diferentes formas de escritura,
+// incluyendo números, abreviaturas y nombres completos.
+func buscarLinea(_ entrada: String) -> String? {
+    let limpio = normalizarTexto(entrada)
+
+    let aliasLineas: [String: String] = [
+        "1": "Línea 1",
+        "l1": "Línea 1",
+        "linea 1": "Línea 1",
+        "linea uno": "Línea 1",
+        "2": "Línea 2",
+        "l2": "Línea 2",
+        "linea 2": "Línea 2",
+        "linea dos": "Línea 2",
+        "metro": "Metropolitano",
+        "metropolitano": "Metropolitano"
+    ]
+
+    if let linea = aliasLineas[limpio] {
+        return linea
+    }
+
+    for linea in linesDictionary.keys {
+        if normalizarTexto(linea) == limpio {
+            return linea
+        }
+    }
+
+    return nil
+}
