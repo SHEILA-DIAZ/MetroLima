@@ -893,3 +893,106 @@ func mostrarMapa() {
 
     separador()
 }
+// ===============================================================
+// 12. MENÚ PRINCIPAL INTERACTIVO
+// ===============================================================
+
+// Controla la ejecución del menú principal del sistema.
+var ejecutando = true
+
+// Encabezado principal del sistema.
+print("")
+separador()
+print("🥇 SISTEMA INTEGRADO DE TRANSPORTE - LIMA 🥈")
+separador()
+print("🚆 Metro de Lima - Línea 1")
+print("🚆 Metro de Lima - Línea 2")
+print("🚌 Metropolitano")
+print("🏆 Juegos Panamericanos")
+separador()
+
+// Bucle principal que mantiene activo el sistema hasta que
+// el usuario seleccione la opción de salida.
+while ejecutando {
+
+    print("")
+    separador()
+    print("📋 MENÚ PRINCIPAL")
+    separador()
+
+    print("1. 🚆 Ver estaciones por línea")
+    print("2. 📍 Buscar detalle de estación")
+    print("3. 🧭 Planificar viaje")
+    print("4. 📋 Ver estaciones disponibles")
+    print("5. 🏆 Ver sedes Panamericanas")
+    print("6. 🔎 Buscar estación")
+    print("7. 🗺️ Ver enlace del mapa")
+    print("8. ℹ️ Información del sistema")
+    print("9. 🚪 Salir")
+
+    separador()
+    print("Seleccione una opción:")
+
+    let opcion = readLine() ?? ""
+
+    switch opcion {
+
+    case "1":
+        print("")
+        print("Ingrese la línea:")
+        if let linea = readLine() {
+            consultarLinea(nombreLinea: linea)
+        }
+        pausa()
+
+    case "2":
+        mostrarEstacionesDisponibles()
+
+        print("")
+        print("Ingrese el nombre de la estación:")
+        if let estacion = readLine() {
+            verDetalleEstacion(
+                nombreIngresado: estacion
+            )
+        }
+        pausa()
+
+    case "3":
+        planificarViaje()
+        pausa()
+
+    case "4":
+        mostrarEstacionesDisponibles()
+        pausa()
+
+    case "5":
+        mostrarSedesPanamericanas()
+        pausa()
+
+    case "6":
+        buscarEstacionInteractivo()
+        pausa()
+
+    case "7":
+        mostrarMapa()
+        pausa()
+
+    case "8":
+        mostrarInformacionSistema()
+        pausa()
+
+    case "9":
+        print("")
+        separador()
+        print("👋 Gracias por utilizar el sistema.")
+        print("🚆 ¡Buen viaje!")
+        separador()
+
+        ejecutando = false
+
+    default:
+        print("")
+        print("❌ Opción no válida.")
+        print("Por favor, seleccione una opción del 1 al 9.")
+    }
+}
