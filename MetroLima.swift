@@ -700,3 +700,78 @@ func calcularTarifa(esEstudiante: Bool) -> String {
 
     return "S/ 1.50 - Tarifa general"
 }
+// ===============================================================
+// 10. PLANIFICADOR DE VIAJES
+// ===============================================================
+
+// Permite al usuario ingresar una estación de origen y una
+// estación de destino para calcular información básica del viaje.
+func planificarViaje() {
+
+    separador()
+    print("🧭 PLANIFICADOR DE VIAJE")
+    separador()
+
+    print("Ingrese la estación de origen:")
+    guard let origenIngresado = readLine(),
+          let origen = buscarEstacion(origenIngresado) else {
+        print("❌ No se encontró la estación de origen.")
+        return
+    }
+
+    print("Ingrese la estación de destino:")
+    guard let destinoIngresado = readLine(),
+          let destino = buscarEstacion(destinoIngresado) else {
+        print("❌ No se encontró la estación de destino.")
+        return
+    }
+
+    print("")
+    print("¿Es estudiante? (s/n)")
+    let respuestaEstudiante = readLine()?.lowercased() ?? "n"
+
+    let esEstudiante = respuestaEstudiante == "s"
+
+    let tiempo = calcularTiempo(
+        origen: origen,
+        destino: destino
+    )
+
+    let tarifa = calcularTarifa(
+        esEstudiante: esEstudiante
+    )
+
+    separador()
+    print("📋 RESUMEN DEL VIAJE")
+    separador()
+
+    print("Origen: \(origen.name)")
+    print("Destino: \(destino.name)")
+    print("Línea de origen: \(origen.line)")
+    print("Línea de destino: \(destino.line)")
+    print("Tiempo estimado: \(tiempo) minutos")
+    print("Tarifa: \(tarifa)")
+
+    if origen.line == destino.line {
+
+        let ruta = obtenerRuta(
+            origen: origen,
+            destino: destino
+        )
+
+        print("")
+        print("🚆 Ruta:")
+
+        for (indice, estacion) in ruta.enumerated() {
+            print("   \(indice + 1). \(estacion.name)")
+        }
+
+    } else {
+
+        print("")
+        print("🔄 El viaje requiere transferencia entre líneas.")
+        print("   Tiempo estimado de transferencia incluido.")
+    }
+
+    separador()
+}
